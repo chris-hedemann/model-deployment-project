@@ -22,7 +22,7 @@ pip install mlflow boto3 google-cloud-storage psycopg2-binary
 mlflow server \
  -h 0.0.0.0 \
  -p 5000 \
- --backend-store-uri postgresql://mlflow-user:'<password>'@10.53.48.3:5432/mlflow-db \
+ --backend-store-uri postgresql://mlflow-user:'<password>'@<uri_sql_server>/mlflow-db \
  --default-artifact-root gs://mlflow-artifacts/default
 
 
