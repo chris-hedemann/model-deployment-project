@@ -1,12 +1,7 @@
 
 import uuid
-import sys
-
 from src.load import load_data
-# from prefect import task, flow, get_run_logger
-# from prefect.context import get_run_context
 from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction import DictVectorizer
 
 
 def generate_uuids(n):
@@ -23,7 +18,7 @@ def read_dataframe(color: str, year: int=2021, month: int=1):
     df['ride_id'] = generate_uuids(len(df))
     return df
 
-def preprocess_new(df):
+def preprocess(df):
     df = df.copy()
     categorical_features = ["PULocationID", "DOLocationID"]
     df[categorical_features] = df[categorical_features].astype(str)
@@ -32,7 +27,7 @@ def preprocess_new(df):
     
     return dicts
     
-def preprocess(df, random_state=42, test_size=0.2):
+def preprocess_train(df, random_state=42, test_size=0.2):
     df = df.copy()
     categorical_features = ["PULocationID", "DOLocationID"]
     df[categorical_features] = df[categorical_features].astype(str)

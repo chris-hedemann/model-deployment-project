@@ -13,7 +13,7 @@ import optuna
 import optuna.visualization as ov
 from optuna.integration.mlflow import MLflowCallback
 
-from src.preprocess import read_dataframe, preprocess
+from src.preprocess import read_dataframe, preprocess_train 
 
 def tune_model(X_train: list[dict], y_train: pd.Series, 
                MLFLOW_TRACKING_URI: str):
@@ -189,7 +189,7 @@ def run():
 
     print("Read and preprocess data\n\n")
     df = read_dataframe(color, year, month)
-    X_train, X_test, y_train, y_test = preprocess(df)
+    X_train, X_test, y_train, y_test = preprocess_train(df)
 
     study = tune_model(X_train, y_train, 
                        MLFLOW_TRACKING_URI)

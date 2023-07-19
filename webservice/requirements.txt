@@ -1,0 +1,6 @@
+pydantic
+fastapi
+mlflow
+pandas-gbq
+uvicorn
+python-dotenv
