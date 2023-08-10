@@ -1,4 +1,4 @@
-mlflow
+mlflow==2.4
 jupyter
 scikit-learn==1.2.2
 click
@@ -11,4 +11,6 @@ gcsfs
 #functions-framework
 black
 plotly
-
+pydantic
+fastapi
+uvicorn
